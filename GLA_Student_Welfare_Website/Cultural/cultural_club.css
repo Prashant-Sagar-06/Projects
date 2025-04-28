@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+.main-section {
+    padding: 2rem;
+    text-align: center;
+}
+.main-section h1 {
+    margin-bottom: 2rem;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: center;
+    padding: 1rem;
+}
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+.card h3 {
+    margin: 1rem 0 0.5rem;
+}
+.card p {
+    color: #555;
+}
