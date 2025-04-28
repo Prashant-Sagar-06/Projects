@@ -348,3 +348,31 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Club Buttons Container */
+.club-buttons {
+    margin: 10px 0; /* Equal margin on top and bottom, no left or right margin */
+    padding: 0 15px; /* Add padding to create equal spacing on both sides */
+}
+
+/* Sidebar Buttons */
+.sidebar-btn {
+    display: block;
+    width: 100%; /* Ensure the button spans the full width of the container */
+    padding: 10px 15px;
+    margin: 5px 0;
+    background-color: #2e73b8; /* Default background color */
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    text-align: center; /* Center-align text */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidebar-btn:hover {
+    background-color: #1abc9c; /* Teal on hover */
+    transform: translateY(-2px); /* Smooth move up on hover */
+}

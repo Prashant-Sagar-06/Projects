@@ -54,9 +54,10 @@ function loadContent(section) {
 
     switch (section) {
         case "about":
-            mainContent.style.background = "linear-gradient(to bottom right,rgba(51, 44, 44, 0.3),rgb(36, 61, 66))"; // Set gradient background
+            mainContent.style.background = "linear-gradient(to bottom right,rgba(44, 141, 232, 0.84),rgb(29, 35, 36))"; // Set gradient background
             mainContent.style.padding = "20px"; // Optional: Add padding for better spacing
             mainContent.style.borderRadius = "10px"; // Optional: Add rounded corners
+            mainContent.style.color = "#fff"; // Optional: Change text color to white for better contrast
             mainContent.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)"; // Optional: Add a shadow for better appearance
             mainContent.innerHTML = `
                 <h2>About</h2>
@@ -73,53 +74,72 @@ function loadContent(section) {
             `;
             break;
             case "studentsClubs":
-    mainContent.innerHTML = `
-        <h2>Students Clubs</h2>
-        <p>Explore the diverse clubs at GLA University, categorized into Cultural Clubs, Departmental Clubs, and Sports Clubs.</p>
-    `;
+                const sidebar = document.querySelector(".sidebar");
 
-    const sidebar = document.querySelector(".sidebar");
-    const clubButtons = document.createElement("div");
-    clubButtons.classList.add("club-buttons");
+                if (sidebar) {
+                    const existingButtons = sidebar.querySelector(".club-buttons");
 
-    const culturalBtn = document.createElement("button");
-    culturalBtn.textContent = "Cultural";
-    culturalBtn.classList.add("sidebar-btn");
-    culturalBtn.addEventListener("click", () => {
-        alert("Cultural Club clicked!");
-    });
+                    if (existingButtons) {
+                        // If buttons already exist -> remove them
+                        existingButtons.remove();
+                    } else {
+                        // If buttons not exist -> create them
+                        const clubButtons = document.createElement("div");
+                        clubButtons.classList.add("club-buttons");
+                        clubButtons.style.display = "flex";
+                        clubButtons.style.flexDirection = "column";
+                        clubButtons.style.alignItems = "center"; // Center align buttons horizontally
+                        clubButtons.style.marginTop = "10px"; // Add some spacing from the Students Clubs link
 
-    const departmentalBtn = document.createElement("button");
-    departmentalBtn.textContent = "Departmental";
-    departmentalBtn.classList.add("sidebar-btn");
-    departmentalBtn.addEventListener("click", () => {
-        alert("Departmental Club clicked!");
-    });
+                        // Create Cultural link
+                        const culturalLink = document.createElement("a");
+                        culturalLink.textContent = "Cultural";
+                        culturalLink.href = "../Cultural/cultural_club.html";
+                        culturalLink.classList.add("sidebar-btn");
+                        culturalLink.style.backgroundColor = "#2196F3"; // Change button color
+                        culturalLink.style.color = "#fff"; // Change text color
+                        culturalLink.style.padding = "10px 15px"; // Add padding
+                        culturalLink.style.borderRadius = "5px"; // Add rounded corners
+                        culturalLink.style.margin = "5px"; // Add margin
 
-    const sportsBtn = document.createElement("button");
-    sportsBtn.textContent = "Sports";
-    sportsBtn.classList.add("sidebar-btn");
-    sportsBtn.addEventListener("click", () => {
-        alert("Sports Club clicked!");
-    });
+                        // Create Departmental link
+                        const departmentalLink = document.createElement("a");
+                        departmentalLink.textContent = "Departmental";
+                        departmentalLink.href = "departmental.html";
+                        departmentalLink.classList.add("sidebar-btn");
+                        departmentalLink.style.backgroundColor = "#2196F3"; // Change button color
+                        departmentalLink.style.color = "#fff"; // Change text color
+                        departmentalLink.style.padding = "10px 15px"; // Add padding
+                        departmentalLink.style.borderRadius = "5px"; // Add rounded corners
+                        departmentalLink.style.margin = "5px"; // Add margin
 
-    clubButtons.appendChild(culturalBtn);
-    clubButtons.appendChild(departmentalBtn);
-    clubButtons.appendChild(sportsBtn);
+                        // Create Sports link
+                        const sportsLink = document.createElement("a");
+                        sportsLink.textContent = "Sports";
+                        sportsLink.href = "sports.html";
+                        sportsLink.classList.add("sidebar-btn");
+                        sportsLink.style.backgroundColor = "#2196F3"; // Change button color
+                        sportsLink.style.color = "#fff"; // Change text color
+                        sportsLink.style.padding = "10px 15px"; // Add padding
+                        sportsLink.style.borderRadius = "5px"; // Add rounded corners
+                        sportsLink.style.margin = "5px"; // Add margin
 
-    // Remove existing club-buttons if already present
-    const existingButtons = sidebar.querySelector(".club-buttons");
-    if (existingButtons) {
-        existingButtons.remove();
-    }
+                        // Add links to container
+                        clubButtons.appendChild(culturalLink);
+                        clubButtons.appendChild(departmentalLink);
+                        clubButtons.appendChild(sportsLink);
 
-    // Find Students Clubs link
-    const studentClubsLink = sidebar.querySelector('a[data-section="studentsClubs"]');
-    if (studentClubsLink) {
-        studentClubsLink.insertAdjacentElement("afterend", clubButtons);
-    }
-    break;
-
+                        // Find Students Clubs link and insert buttons after it
+                        const studentClubsLink = sidebar.querySelector('a[data-section="studentsClubs"]');
+                        if (studentClubsLink) {
+                            studentClubsLink.insertAdjacentElement("afterend", clubButtons);
+                        }
+                    }
+                } else {
+                    console.error("Sidebar element not found.");
+                }
+                break;
+            
         case "ncc":
             mainContent.innerHTML = `
                 <h2>NCC</h2>
