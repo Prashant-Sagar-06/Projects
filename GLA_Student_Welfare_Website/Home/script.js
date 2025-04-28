@@ -61,7 +61,7 @@ function loadContent(section) {
             mainContent.innerHTML = `
                 <h2>About</h2>
                 <p>Students Welfare at GLA University works to ensure that students develop academically, professionally, and personally through a variety of programs and support initiatives.</p>
-                <img src="images/about-gla.jpg" alt="About Students Welfare" class="banner-img small-img">
+                <img src="../images/about-gla.jpg" alt="About Students Welfare" class="banner-img small-img">
                 <p style="margin-top: 20px; text-align: justify; font-size: 1rem; line-height: 1.6;">GLA University Students Welfare is committed to fostering a vibrant campus life by organizing events, providing support services, and creating opportunities for students to excel in all aspects of their lives. Join us in building a community of growth, learning, and success.</p>
             `;
             break;
@@ -72,32 +72,54 @@ function loadContent(section) {
                 <img src="activity_centre_banner.jpg" alt="Student Activities" class="banner-img">
             `;
             break;
-        case "studentsClubs":
-            mainContent.innerHTML = `
-                <h2>Students Clubs</h2>
-                <p>Explore the diverse clubs at GLA University, categorized into Cultural Clubs, Departmental Clubs, and Sports Clubs.</p>
-                <div class="club-cards">
-                    <div class="club-card">
-                        <img src="images/cultural-clubs.png" alt="Cultural Club" class="club-card-img">
-                        <h3>Cultural Club</h3>
-                        <p>Engage in music, dance, and drama activities.</p>
-                        <a href="cultural_club.html" class="club-btn">Explore</a>
-                    </div>
-                    <div class="club-card">
-                        <img src="images/departmental-club.png" alt="Departmental Club" class="club-card-img">
-                        <h3>Departmental Club</h3>
-                        <p>Participate in academic and technical events.</p>
-                        <a href="departmental_club.html" class="club-btn">Explore</a>
-                    </div>
-                    <div class="club-card">
-                        <img src="images/sports-club.png" alt="Sports Club" class="club-card-img">
-                        <h3>Sports Club</h3>
-                        <p>Stay active with sports and tournaments.</p>
-                        <a href="sports_club.html" class="club-btn">Explore</a>
-                    </div>
-                </div>
-            `;
-            break;
+            case "studentsClubs":
+    mainContent.innerHTML = `
+        <h2>Students Clubs</h2>
+        <p>Explore the diverse clubs at GLA University, categorized into Cultural Clubs, Departmental Clubs, and Sports Clubs.</p>
+    `;
+
+    const sidebar = document.querySelector(".sidebar");
+    const clubButtons = document.createElement("div");
+    clubButtons.classList.add("club-buttons");
+
+    const culturalBtn = document.createElement("button");
+    culturalBtn.textContent = "Cultural";
+    culturalBtn.classList.add("sidebar-btn");
+    culturalBtn.addEventListener("click", () => {
+        alert("Cultural Club clicked!");
+    });
+
+    const departmentalBtn = document.createElement("button");
+    departmentalBtn.textContent = "Departmental";
+    departmentalBtn.classList.add("sidebar-btn");
+    departmentalBtn.addEventListener("click", () => {
+        alert("Departmental Club clicked!");
+    });
+
+    const sportsBtn = document.createElement("button");
+    sportsBtn.textContent = "Sports";
+    sportsBtn.classList.add("sidebar-btn");
+    sportsBtn.addEventListener("click", () => {
+        alert("Sports Club clicked!");
+    });
+
+    clubButtons.appendChild(culturalBtn);
+    clubButtons.appendChild(departmentalBtn);
+    clubButtons.appendChild(sportsBtn);
+
+    // Remove existing club-buttons if already present
+    const existingButtons = sidebar.querySelector(".club-buttons");
+    if (existingButtons) {
+        existingButtons.remove();
+    }
+
+    // Find Students Clubs link
+    const studentClubsLink = sidebar.querySelector('a[data-section="studentsClubs"]');
+    if (studentClubsLink) {
+        studentClubsLink.insertAdjacentElement("afterend", clubButtons);
+    }
+    break;
+
         case "ncc":
             mainContent.innerHTML = `
                 <h2>NCC</h2>
