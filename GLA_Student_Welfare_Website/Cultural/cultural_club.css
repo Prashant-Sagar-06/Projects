@@ -1,4 +1,5 @@
 /* General Body Styling */
+
 body {
     margin: 0;
     font-family: 'Roboto', Arial, sans-serif;
@@ -60,7 +61,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004d40;
     color: white;
     padding: 15px 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -103,7 +103,7 @@ nav ul li a:hover {
 
 /* Footer Styling */
 .footer {
-    background: linear-gradient(to right, #004d40, #00796b);
+    background: #2a6679;
     color: white;
     padding: 40px 20px;
     text-align: center;
@@ -257,7 +257,7 @@ nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    height: 50px; /* Set a good height */
+    height: 30px; /* Set a good height */
 }
 
 /* Header Styling */
@@ -265,9 +265,9 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004d40;
+    background-color: #2a6679;
     color: white;
     padding: 15px 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    height: 70px; /* Set a good height */
+    height: 30px; /* Set a good height */
 }
