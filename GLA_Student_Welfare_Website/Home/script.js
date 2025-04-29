@@ -105,7 +105,7 @@ function loadContent(section) {
                         // Create Departmental link
                         const departmentalLink = document.createElement("a");
                         departmentalLink.textContent = "Departmental";
-                        departmentalLink.href = "departmental.html";
+                        departmentalLink.href = "../Deparmental/Departmental.html";
                         departmentalLink.classList.add("sidebar-btn");
                         departmentalLink.style.backgroundColor = "#2196F3"; // Change button color
                         departmentalLink.style.color = "#fff"; // Change text color
@@ -116,7 +116,7 @@ function loadContent(section) {
                         // Create Sports link
                         const sportsLink = document.createElement("a");
                         sportsLink.textContent = "Sports";
-                        sportsLink.href = "sports.html";
+                        sportsLink.href = "../Sports/Sports.html";
                         sportsLink.classList.add("sidebar-btn");
                         sportsLink.style.backgroundColor = "#2196F3"; // Change button color
                         sportsLink.style.color = "#fff"; // Change text color
